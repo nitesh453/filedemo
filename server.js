@@ -3,7 +3,7 @@ const path = require("path")
 const multer = require("multer")
 const app = express()
 
-	
+	const PORT = process.env.PORT;
 // View Engine Setup
 app.set("views",path.join(__dirname,"views"))
 app.set("view engine","ejs")
@@ -76,7 +76,7 @@ app.post("/uploadProfilePicture",function (req, res, next) {
 	
 // Take any port number of your choice which
 // is not taken by any other process
-app.listen(8080,function(error) {
+app.listen(PORT,function(error) {
 	if(error) throw error
 		console.log("Server created Successfully on PORT 8080")
 })
